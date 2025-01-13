@@ -45,7 +45,7 @@ function Credentials(): React.JSX.Element {
     let tipType: 'error' | 'success' | undefined = undefined;
     let abstractCredentialInfoList: AbstractCredentialInfo[] = [];
     const [activeCredential, setActiveCredential] = useState<CredentialVariables | undefined>(undefined);
-    const currentRole: string | undefined = useCurrentUserRoleStore((state) => state.currentUserRole);
+    const currentRole: string | undefined = useCurrentUserRoleStore.getState().currentUserRole;
 
     const credentialsQuery = useCredentialsListQuery();
 

@@ -8,7 +8,7 @@ import { getIsvCloudCredentials, getUserCloudCredentials } from '../../../../xpa
 import { useCurrentUserRoleStore } from '../../../layouts/header/useCurrentRoleStore';
 
 export default function useCredentialsListQuery() {
-    const currentRole: string | undefined = useCurrentUserRoleStore((state) => state.currentUserRole);
+    const currentRole: string | undefined = useCurrentUserRoleStore.getState().currentUserRole;
     return useQuery({
         queryKey: ['credentialsQuery', currentRole],
         queryFn: () => {
