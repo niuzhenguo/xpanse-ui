@@ -14,7 +14,7 @@ import { SearchServices } from './SearchServices.tsx';
 import { useCurrentUserRoleStore } from './useCurrentRoleStore.ts';
 
 function LayoutHeader({ userName, roles }: { userName: string; roles: string[] }): React.JSX.Element {
-    const currentRole = useCurrentUserRoleStore((state) => state.currentUserRole);
+    const currentRole = useCurrentUserRoleStore.getState().currentUserRole;
     return (
         <Header className={headerStyles.layoutHeader}>
             <div className={appStyles.headerMenu}>

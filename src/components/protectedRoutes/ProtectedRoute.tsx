@@ -41,7 +41,7 @@ function Protected(protectedRouteProperties: ProtectedRouteProperties): React.JS
         updateApiConfig();
     }
 
-    const currentRole: string | undefined = useCurrentUserRoleStore((state) => state.currentUserRole);
+    const currentRole: string | undefined = useCurrentUserRoleStore.getState().currentUserRole;
     if (currentRole !== undefined && protectedRouteProperties.allowedRole.includes(currentRole as roles)) {
         return getFullLayout(protectedRouteProperties.children);
     }

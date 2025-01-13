@@ -33,7 +33,7 @@ import ServiceConfigManagement from '../../../serviceConfigurationManage/Service
 import { ShowIcon } from './ShowIcon';
 
 function ServiceDetail({ serviceDetails }: { serviceDetails: ServiceTemplateDetailVo }): React.JSX.Element {
-    const currentRole = useCurrentUserRoleStore((state) => state.currentUserRole);
+    const currentRole = useCurrentUserRoleStore.getState().currentUserRole;
     const navigate = useNavigate();
     let numberOfActiveServiceDeployments: number = 0;
     const listDeployedServicesByIsvQuery = useDeployedServicesByIsvQuery(

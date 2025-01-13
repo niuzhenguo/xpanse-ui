@@ -11,7 +11,7 @@ import { IsvServicesDashBoard } from './isv/IsvServicesDashBoard';
 import { EndUserServicesDashboard } from './user/EndUserServicesDashboard';
 
 function Home(): React.JSX.Element {
-    const currentRole = useCurrentUserRoleStore((state) => state.currentUserRole);
+    const currentRole = useCurrentUserRoleStore.getState().currentUserRole;
 
     return (
         <div className={appStyles.homeDataDisplay}>
